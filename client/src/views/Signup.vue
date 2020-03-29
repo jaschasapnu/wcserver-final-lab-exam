@@ -1,5 +1,5 @@
 <template>
-<div class="sign-up" @submit.prevent = 'register'>
+<div class="sign-up">
     <div class="container">
         <div class="row h-100 justify-content-center">
             <div class="text-box ml-auto mr-auto text-center" style="width: 600px; margin: 60px;" >
@@ -9,7 +9,7 @@
                     <p>Create an NBA Account<p>
                     <hr class="bg-dark mt-5 mb-5 w-50">
                 </div>
-                <form>
+                <form name="signup-form">
                     <div class="form-group text-center">
                         <label for="first_name">First Name</label>
                         <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name" v-model="fname"/>
@@ -52,7 +52,7 @@
                         <a href="https://secure.nba.com/news/termsofuse/">Terms of Service</a>.</label><br>
                         <label class="text-secondary" style="font-size: 14px;">Already have an account?</label>&nbsp;
                         <a href="/login" style="font-size: 14px;">Log In.</a><br><br>
-                        <button class="btn btn-lg m-3 mb-5" id="sign-in" type="submit">Sign In & Continue</button>
+                        <button class="btn btn-lg m-3 mb-5" id="sign-in" type="submit" onsubmit="return signupform()">Sign In & Continue</button>
                         <button class="btn btn-lg btn-danger m-3 mb-5" style="font-size: 15px;" type="button">Cancel</button>
                         <p class="text-justify text-secondary mb-5" style="font-size: 12px;">By signing to any of the above terms, you are agreeing that your personal information will be collected, stored and processed in the United States on behalf of the NBA. We provide appropriate security to your personal information. You can opt out of receiving communications at any time, all pursuant to the Privacy Policy. 
                             You can request the modification or deletion of your personal information and browsing data from the NBA’s records at any time. You can request a copy of your personal information and browsing data held by the NBA at any time. Should you have any complaints about our use and storage of your personal information and browsing data, you can direct them to your country’s data protection authority. 
@@ -79,9 +79,7 @@
                 mobilenum:'',
                 address:'',
                 bdate:'',
-                sex:'',
                 email:'',
-                username:'',
                 password:'',
                 cpass:''
             }
@@ -89,16 +87,15 @@
         methods: {
             register () {
                 axios.post('app/signup', {
-                    first_name:this.fname,
-                    middle_initial:this.mname,
-                    last_name:this.lname,
-                    mobile_no:this.mobilenum,
-                    address:this.address,
-                    birthdate:this.bdate,
-                    sex:this.sex,
-                    email_address:this.email,
-                    username:this.username,
-                    password:this.password,
+                    first_name: this.fname,
+                    middle_initial: this.mname,
+                    last_name: this.lname,
+                    mobile_no: this.mobilenum,
+                    address: this.address,
+                    birthdate: this.bdate,
+                    email_address: this.email,
+                    username: this.username,
+                    password: this.password,
                 }).then(res => {
                     if (!res.data){
                         alert('You have successfully registered...')
@@ -110,7 +107,6 @@
             }
         }
     }
-
 
 </script>
 

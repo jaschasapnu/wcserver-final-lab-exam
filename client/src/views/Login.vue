@@ -1,5 +1,5 @@
 <template>
-<div class="login" @submit.prevent = 'register'>
+<div class="login">
     <div class="container">
         <div class="row h-100 justify-content-center">
             <div class="text-box ml-auto mr-auto text-center" style="width: 600px; margin: 60px;" >

@@ -12,17 +12,18 @@ const user = require('../models/user.js')
 
 app.post('/signup', (req,res) => {
     const userData = {
-        first_name:req.body.fname,
-        middle_initial:req.body.mname,
-        last_name:req.body.lname,
-        mobile_no:req.body.mobilenum,
-        address:req.body.address,
-        birthdate:req.body.bdate,
-        sex:req.body.sex,
-        email_address:req.body.email,
-        username:req.body.username,
-        password:req.body.password,
+        first_name: req.body.fname,
+        middle_initial: req.body.mname,
+        last_name: req.body.lname,
+        mobile_no: req.body.mobilenum,
+        address: req.body.address,
+        birthdate: req.body.bdate,
+        sex: req.body.sex,
+        email_address: req.body.email,
+        username: req.body.username,
+        password: req.body.password,
     }
+    console.log("Hello")
     user.findOne({
         email: req.body.email
     }).then(user =>{

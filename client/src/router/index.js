@@ -7,6 +7,7 @@ import News from '../views/News.vue'
 import Events from '../views/Events.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
